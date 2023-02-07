@@ -5,7 +5,7 @@ setwd('C:/Users/GLC/Desktop/AIMS/REVIEW Course/BLOCK 4/Supervised and unsupervis
 mydata<-read.csv ('wine_dataset.csv', sep=',', stringsAsFactors=FALSE, header=TRUE)
 attach(mydata)
 
-#We remove the variable style
+#We remove the variable style and we create a new feature with just two class 'Nice' and 'worse'
 mydata<-subset(mydata, select = -c(style))
 mydata['qualty']<-ifelse(quality>5, 'Nice', 'Worse')
 mydata<-subset(mydata, select = -c(quality))
@@ -77,8 +77,9 @@ modelnb <- train(factor(qualty)~., data=train, method="naive_bayes", trControl=c
 modelnb
 prednb=predict(modelnb,newdata = test)
 confusionMatrix(prednb,as.factor(test$qualty))
-#We fit our Logistic regression model
 
+
+#We fit our Logistic regression model
 set.seed(11)
 modelLR <- train(factor(qualty)~., data=train, method="glm", family='binomial', trControl=cross)
 modelLR
