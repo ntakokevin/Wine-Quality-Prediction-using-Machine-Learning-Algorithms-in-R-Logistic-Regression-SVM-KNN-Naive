@@ -1,6 +1,8 @@
 # Machine-learning-with-R-
 The aim of this exercise is to use several machine learning algorithms: Logistic regression, support vector machine (SVM), KNN, naives bayes, random forest, in order to predict the quality of the wine for which we have some information.
 
+In this work we did not perform any preprocessing on the data. If you wish to have a better score it is necessary to preprocess the data.
+
 The intruction are as follows
 
 a) Divide the data into training and testing sets. Use 70% as the training set.
